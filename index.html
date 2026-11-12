@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Encontre produtos e servicos no comercio de Palmares.">
+  <title>Achei Palmares | Comercio local</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Achei Palmares - inicio">
+        <span class="brand-mark">AP</span>
+        <span><strong>Achei</strong><small>Palmares</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegacao principal">
+        <a class="nav-link is-active" href="#inicio" data-view-link="public">Buscar</a>
+        <a class="nav-link" href="#como-funciona">Como funciona</a>
+        <button class="button button-ghost" type="button" data-action="open-login">Acesso administrativo</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Comercio local, mais perto de voce</p>
+          <h1>Descubra onde encontrar o que Palmares tem de melhor.</h1>
+          <p class="hero-text">Pesquise produtos e servicos, compare opcoes e encontre estabelecimentos locais sem perder tempo.</p>
+          <div class="hero-stats" aria-label="Resumo da plataforma">
+            <span><strong id="stat-establishments">0</strong><small>estabelecimentos</small></span>
+            <span><strong id="stat-items">0</strong><small>itens cadastrados</small></span>
+            <span><strong>100%</strong><small>acesso publico</small></span>
+          </div>
+        </div>
+        <div class="search-panel" aria-labelledby="search-title">
+          <div class="panel-kicker">Busca publica</div>
+          <h2 id="search-title">O que voce procura hoje?</h2>
+          <form id="search-form" class="search-form">
+            <label for="search-input">Produto ou servico</label>
+            <div class="search-input-wrap">
+              <span aria-hidden="true">⌕</span>
+              <input id="search-input" name="query" type="search" placeholder="Ex.: farmacia, bolo, conserto..." autocomplete="off">
+            </div>
+            <label for="category-filter">Categoria</label>
+            <select id="category-filter" name="category">
+              <option value="">Todas as categorias</option>
+            </select>
+            <button class="button button-primary button-wide" type="submit">Encontrar opcoes</button>
+          </form>
+          <p class="search-hint">Sem cadastro. Encontre informacoes para decidir onde ir.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section container" aria-labelledby="results-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Resultados</p>
+          <h2 id="results-title">Opcoes encontradas</h2>
+        </div>
+        <span id="results-count" class="result-count">0 resultados</span>
+      </div>
+      <div id="results-grid" class="results-grid"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <span class="empty-icon">⌕</span>
+        <h3>Nao encontramos esse item ainda</h3>
+        <p>Tente outro termo ou remova o filtro de categoria para ampliar sua busca.</p>
+        <button class="button button-secondary" type="button" data-action="clear-search">Limpar busca</button>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="how-section">
+      <div class="container">
+        <div class="section-heading section-heading-centered">
+          <div>
+            <p class="eyebrow">Simples para todos</p>
+            <h2>Do que voce precisa ate onde encontrar</h2>
+          </div>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card"><span>01</span><h3>Pesquise</h3><p>Digite o produto ou servico que voce procura.</p></article>
+          <article class="step-card"><span>02</span><h3>Compare</h3><p>Veja estabelecimentos, horarios e formas de contato.</p></article>
+          <article class="step-card"><span>03</span><h3>Encontre</h3><p>Abra a rota e va direto ao comercio escolhido.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="admin-view" class="admin-section" hidden>
+    <div class="container">
+      <div class="admin-heading">
+        <div><p class="eyebrow">Painel administrativo</p><h1>Organize o comercio local</h1><p>Cadastre e mantenha atualizadas as opcoes exibidas na busca publica.</p></div>
+        <button class="button button-secondary" type="button" data-action="logout">Sair do painel</button>
+      </div>
+      <div class="admin-layout">
+        <aside class="admin-nav" aria-label="Menu administrativo">
+          <button class="admin-tab is-active" type="button" data-admin-tab="establishments">Estabelecimentos</button>
+          <button class="admin-tab" type="button" data-admin-tab="items">Produtos e servicos</button>
+          <button class="admin-tab" type="button" data-admin-tab="categories">Categorias</button>
+        </aside>
+        <div class="admin-content">
+          <div id="admin-establishments" class="admin-panel"></div>
+          <div id="admin-items" class="admin-panel" hidden></div>
+          <div id="admin-categories" class="admin-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dialog id="login-dialog" class="dialog-card">
+    <form method="dialog" id="login-form">
+      <button class="dialog-close" type="submit" aria-label="Fechar">×</button>
+      <p class="eyebrow">Area restrita</p>
+      <h2>Acesso administrativo</h2>
+      <p class="dialog-intro">Entre para gerenciar os dados exibidos na busca publica.</p>
+      <label for="login-email">E-mail</label>
+      <input id="login-email" type="email" value="admin@acheipalmares.local" required>
+      <label for="login-password">Senha</label>
+      <input id="login-password" type="password" placeholder="Digite a senha demonstrativa" required>
+      <p class="login-note">Demonstracao local: use a senha <strong>achei123</strong>.</p>
+      <button class="button button-primary button-wide" type="submit">Entrar no painel</button>
+    </form>
+  </dialog>
+
+  <dialog id="detail-dialog" class="dialog-card detail-dialog"></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner"><span>© 2026 Achei Palmares</span><span>Uma ponte entre pessoas e negocios locais.</span></div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -2,13 +2,16 @@
 
 ## Objetivo
 
-Este documento define a organização inicial do repositório do Achei Palmares. Como o projeto ainda está em fase de planejamento e possui apenas a documentação de escopo, a estrutura abaixo representa a organização planejada para a primeira versão da aplicação web.
+Este documento define a organizacao inicial do repositorio do Achei Palmares. A primeira interface funcional foi criada sem dependencias externas, mantendo a documentacao de dominio separada dos arquivos da aplicacao.
 
 ## Estrutura planejada
 
 ```text
 Achei-Palmares/
 ├── README.md
+├── index.html
+├── styles.css
+├── app.js
 ├── readme-escopo.md
 ├── readme-estrutura.md
 ├── readme-arquitetura.md
@@ -46,4 +49,6 @@ Alterações de naturezas diferentes devem ser documentadas em arquivos próprio
 
 ## Situação atual
 
-Neste momento, a estrutura de código ainda não foi criada. A implementação deverá começar somente depois da definição da arquitetura, dos requisitos e do modelo inicial de dados.
+Uma primeira versao funcional ja existe em `index.html`, `styles.css` e `app.js`. Ela implementa a busca publica e um painel administrativo demonstrativo com dados no `localStorage` do navegador.
+
+As pastas `frontend/`, `backend/` e `database/` continuam previstas para a proxima etapa, quando a API, a persistencia compartilhada e a autenticacao real forem implementadas.
