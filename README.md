@@ -22,9 +22,9 @@ Esta versao inicial ja possui uma interface web funcional para demonstracao loca
 	python -m http.server 5500
 	```
 
-3. Acesse `http://localhost:5500` no navegador.
+3. Acesse `http://localhost:5500/frontend/` no navegador.
 
-Tambem e possivel abrir o `index.html` usando a extensao Live Server do VS Code.
+Tambem e possivel abrir `frontend/index.html` usando a extensao Live Server do VS Code.
 
 ## Funcionalidades disponiveis
 
@@ -51,13 +51,13 @@ Os dados cadastrados ficam no `localStorage` do navegador. Essa configuracao e a
 
 ## Documentacao
 
-- [Escopo do projeto](readme-escopo.md)
-- [Requisitos funcionais e nao funcionais](readme-requisitos.md)
-- [Estrutura do projeto](readme-estrutura.md)
-- [Arquitetura](readme-arquitetura.md)
-- [Banco de dados](readme-banco-de-dados.md)
-- [Autenticacao](readme-autenticacao.md)
-- [Administracao](readme-administracao.md)
-- [Busca publica](readme-busca.md)
-- [Localizacao](readme-localizacao.md)
-- [Decisoes do projeto](readme-decisoes.md)
+- [Escopo do projeto](docs/readme-escopo.md)
+- [Requisitos funcionais e nao funcionais](docs/readme-requisitos.md)
+- [Estrutura do projeto](docs/readme-estrutura.md)
+- [Arquitetura](docs/readme-arquitetura.md)
+- [Banco de dados](docs/readme-banco-de-dados.md)
+- [Autenticacao](docs/readme-autenticacao.md)
+- [Administracao](docs/readme-administracao.md)
+- [Busca publica](docs/readme-busca.md)
+- [Localizacao](docs/readme-localizacao.md)
+- [Decisoes do projeto](docs/readme-decisoes.md)
